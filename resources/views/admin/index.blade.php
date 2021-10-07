@@ -5,6 +5,8 @@
 
 @section('content')
 
-Test Messages
+<x-main-content>
+    Test Messages
+</x-main-content>
 
 @endsection
