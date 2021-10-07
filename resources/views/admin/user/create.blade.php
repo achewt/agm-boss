@@ -45,16 +45,11 @@
                         </div>
                     @endif
 
-                    <!-- <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Role</label>
-                        <div class="col-sm-12 col-md-7">
-                        <select class="form-control selectric">
-                            <option>Tech</option>
-                            <option>News</option>
-                            <option>Political</option>
-                        </select>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <x-data-combo name="role_id" label="Role" :data="$roles" :selected="$userRole"></x-data-combo>
                         </div>
-                    </div> -->
+                    </div>
                     <!-- <div class="form-group row mb-4">
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Status</label>
                         <div class="col-sm-12 col-md-7">
@@ -66,11 +61,8 @@
                         </div>
                     </div> -->
 
-                    <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
-                        <div class="col-sm-12 col-md-7">
-                        <button class="btn btn-primary" type="submit">Save</button>
-                        </div>
+                    <div class="row">
+                        <x-button icon="fas fa-save" type="submit" name="submit" label="Save"></x-input>
                     </div>
                 </form>
             </div>

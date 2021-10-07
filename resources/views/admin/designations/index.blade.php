@@ -1,16 +1,16 @@
 @extends('layouts.admin')
-@section('title', 'Roles')
-@section('body_title', 'Roles List')
+@section('title', 'Designations')
+@section('body_title', 'Designations List')
 
 @php
-    $headers = ['Name'];
-    $records = $roles;
-    $columns = ['name'];
-    $edit_delete = ['edit-role', 'delete-role'];
+    $headers = ['Name', 'Remarks'];
+    $records = $designations;
+    $columns = ['name', 'remarks'];
+    $edit_delete = ['edit-designation', 'delete-designation'];
 @endphp
 
 @section('content')
-<x-main-content addLink="{{ route('create-role') }}" bcSecond="Roles">
+<x-main-content addLink="{{ route('create-designation') }}" bcSecond="Designations">
     <div class="row">
         <div class="col-12">
         <div class="card">

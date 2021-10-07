@@ -6,7 +6,7 @@
 @section('content')
 
 <x-main-content>
-    Test Messages
+    <x-session-flash-message></x-session-flash-message>
 </x-main-content>
 
 @endsection

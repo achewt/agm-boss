@@ -13,6 +13,7 @@
             <h4>@yield('title')</h4>
             </div>
             <div class="card-body">
+                <x-form-validation-errors class="mb-4" :errors="$errors" />
                 <form method="POST" action="{{ route('change-password') }}">
                     @csrf
                     <div class="form-group row mb-4">

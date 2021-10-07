@@ -14,7 +14,8 @@ class PermissionTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {   
+        // Role Permissions
         $permissions = [
             'role-list',
             'role-edit',
@@ -23,6 +24,17 @@ class PermissionTableSeeder extends Seeder
       
         foreach ($permissions as $permission) {
             Permission::create(['name' => $permission, 'group' => 'role']);
+        }
+
+        // User Permissions
+        $user_permissions = [
+            'user-list',
+            'user-edit',
+            'user-delete'
+        ];
+      
+        foreach ($user_permissions as $user_permission) {
+            Permission::create(['name' => $user_permission, 'group' => 'user']);
         }
     }
 }

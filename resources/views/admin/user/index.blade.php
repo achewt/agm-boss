@@ -4,10 +4,10 @@
 @section('body_title', 'User List')
 
 @php
-    $headers = ['Name', 'Email', 'Noway'];
+    $headers = ['Name', 'Email', 'Role'];
     $records = $users;
-    $columns = ['name', 'email', 'noway'];
-    $edit_delete = ['update-user', 'delete-user'];
+    $columns = ['name', 'email', 'role'];
+    $edit_delete = ['edit-user', 'delete-user'];
 @endphp
 
 @section('content')
@@ -20,7 +20,7 @@
             <h4>@yield('body_title')</h4>
             </div>
             <div class="card-body">
-
+                <x-session-flash-message></x-session-flash-message>
                 <div class="table-responsive">
                     <x-table :headers="$headers" :columns="$columns" :records="$records" :routes="$edit_delete"></x-table>
                 </div>

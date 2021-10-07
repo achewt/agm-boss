@@ -18,21 +18,33 @@ class UserTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {   
+        // Create Roles
+        $permissions = Permission::pluck('id','id')->all();
+        
+        $role = Role::create(['name' => 'Super Admin']);
+
+        $role->syncPermissions($permissions);
+
+        $admin_role = Role::create(['name' => 'Admin']);
+        
+        $admin_role->syncPermissions($permissions);
+
+        // Create User
+        $super_user = User::create([
+            'name' => 'Super Admin',
+            'email' => 'super.admin@example.com',
+            'password' => Hash::make('admin')
+        ]);
+        
+        $super_user->assignRole('Super Admin');
+
         $user = User::create([
             'name' => 'Achyut Khadka',
             'email' => 'achyut.khadka@gmail.com',
             'password' => Hash::make('admin')
         ]);
-
-        $role = Role::create(['name' => 'Super Admin']);
-
+        
         $user->assignRole('Super Admin');
-
-        $admin_role = Role::create(['name' => 'Admin']);
-     
-        $permissions = Permission::pluck('id','id')->all();
-   
-        $admin_role->syncPermissions($permissions);
     }
 }
